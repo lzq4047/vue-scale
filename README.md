@@ -19,3 +19,21 @@ npm run build --report
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+## Usage
+
+### Base Usage
+
+```html
+<scale>
+  <div>
+    content
+  </div>
+</scale>
+```
+
+## Properties
+
+| Name | Decription | Type | Accepted Value | Default |
+|------|------------|------|----------------|---------|
+|step  | increasment/decreasement | Number | > 0 | 0.1 |
