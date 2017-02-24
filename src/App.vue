@@ -1,17 +1,20 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <hello></hello>
+    <scale>
+      <div class="content">
+        Content
+      </div>
+    </scale>
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello'
+import Scale from './components/VueScale'
 
 export default {
   name: 'app',
   components: {
-    Hello
+    Scale
   }
 }
 </script>
@@ -23,6 +26,12 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  width: 600px;
+  height: 400px;
+  margin: 60px auto;
+}
+.content{
+  font-size: 60px;
+  margin-top: 170px;
 }
 </style>
