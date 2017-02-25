@@ -6,14 +6,14 @@
           @click="enlarge(step)"
           @mousedown="handleButtonMouseDown(enlarge, $event)"
           @mouseup="handleButtonMouseUp($event)"
-          title="长按快速1s放大">
+          :title="'长按' + quickScaleTimeout + 'ms快速放大'">
           <span class="fa fa-search-plus"></span>
         </button>
         <button
           @click="reduce(step)"
           @mousedown="handleButtonMouseDown(reduce, $event)"
           @mouseup="handleButtonMouseUp($event)"
-          title="长按快速1s缩小">
+          :title="'长按' + quickScaleTimeout + 'ms快速缩小'">
           <span class="fa fa-search-plus"></span>
         </button>
         <button
@@ -58,13 +58,17 @@
       }
     },
     props: {
-      size: {
-        type: Number,
-        default: 16
-      },
       step: {
         type: Number,
         default: 0.1
+      },
+      quickScaleTimeout: {
+        type: Number,
+        default: 1000
+      },
+      quickScaleInterval: {
+        type: Number,
+        default: 100
       }
     },
     computed: {
@@ -131,9 +135,9 @@
         this.longPressTimeout = setTimeout(() => {
           this.longPressInterval = setInterval(() => {
             cb(this.step)
-          }, 100)
+          }, this.quickScaleInterval)
           clearTimeout(this.longPressTimeout)
-        }, 1000)
+        }, this.quickScaleTimeout)
       },
       handleButtonMouseUp: function (e) {
         if (this.longPressTimeout) {

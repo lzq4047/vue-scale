@@ -20,9 +20,9 @@ npm run build --report
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
-## Usage
+## 用法
 
-### Base Usage
+### 基本用法
 
 ```html
 <scale>
@@ -32,8 +32,29 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 </scale>
 ```
 
-## Properties
+### 设置长按缩放的响应时间
 
-| Name | Decription | Type | Accepted Value | Default |
+```html
+<scale :quick-scale-timeout="1500">
+  <div>
+    content
+  </div>
+</scale>
+```
+
+### 设置长按缩放的速度
+```
+<scale :quick-scale-interval="30">
+  <div>
+    content
+  </div>
+</scale>
+```
+
+## 属性
+
+| 名称 | 描述 | 类型 | 可选值 | 默认值 |
 |------|------------|------|----------------|---------|
-|step  | increasment/decreasement | Number | > 0 | 0.1 |
+|step  | 缩放的递增和递减每次的改变量 | Number | > 0 | 0.1 |
+|quick-scale-timeout | 长按响应时间 | Number | > 0 | 1000 |
+|quick-scale-interval | 长按是缩放速度 | Number | > 0 | 100 |

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <scale>
+    <scale :quick-scale-timeout="300" :quick-scale-interval="30">
       <div class="content">
         Content
       </div>
